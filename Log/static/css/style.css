@@ -1,0 +1,41 @@
+body {
+	background: #EEEEEE;
+	height: 100%;
+}
+
+form .row {
+	margin-bottom: 0px !important;
+	margin-left: -0.75rem !important;
+	margin-right: -0.75rem !important;
+}
+
+.input-field {
+	margin-bottom: 0 !important;
+}
+
+.input-field input[type=text]:focus + label {
+    color: #37474F !important;
+}
+
+.input-field input[type=text]:focus {
+	border-bottom: 1px solid #37474F !important;
+    box-shadow: 0 1px 0 0 #37474F !important;
+}
+
+.input-field input[type=password]:focus + label {
+    color: #37474F !important;
+}
+
+.input-field input[type=password]:focus {
+	border-bottom: 1px solid #37474F !important;
+    box-shadow: 0 1px 0 0 #37474F !important;
+}
+
+.material-icons {
+	color: #37474F !important;
+}
+
+.material-icons.active {
+	color: #37474F !important;
+}
+

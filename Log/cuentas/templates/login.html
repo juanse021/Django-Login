@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l8 offset-l2">
+                <div class="card">
+                    <form method="POST" action="">{% csrf_token %}
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-2">Inicia sesión</span>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="username" type="text" class="validate" name="username">
+                                    <label for="username">Usuario</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">enhanced_encryption</i>
+                                    <input id="password" type="password" class="validate" name="password">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="checkbox-field col s12 right-align">
+                                    <label>
+                                        <input type="checkbox" class="filled-in" id="remember" name="remember">
+                                        <span for="remember-me">Recordarme</span>
+                                    </label>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div class="right-align">
+                                <a href="{% url 'cuentas:registrar' %}">Registrar</a>
+                                <button class="btn waves-effect waves-light blue-grey darken-3" type="submit">Iniciar sesion</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

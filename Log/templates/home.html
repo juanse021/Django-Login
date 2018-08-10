@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido</h1>
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}!</p>
+        <a href="{% url 'cuentas:logout' %}">Cerrar sesion</a>
+    {% else %}
+        <p>No estas logueado</p>
+        <a href="{% url 'cuentas:login' %}">Inicia sesion</a>
+    {% endif %}
+{% endblock %}

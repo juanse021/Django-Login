@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Registrar{% endblock %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l8 offset-l2">
+                <div class="card">
+                    <form method="POST" action="">{% csrf_token %}
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-2">Registrar</span>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="username" type="text" class="validate" name="username">
+                                    <label for="username">Usuario</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="email" type="text" class="validate" name="email">
+                                    <label for="email">Correo</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">enhanced_encryption</i>
+                                    <input id="password" type="password" class="validate" name="password">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">enhanced_encryption</i>
+                                    <input id="confirm_password" type="password" class="validate" name="confirm_password">
+                                    <label for="confirm_password">Confirmar Password</label>
+                                </div>
+                            </div>
+                        <div class="card-action">
+                            <div class="right-align">
+                                <button class="btn waves-effect waves-light blue-grey darken-3" type="submit">Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var options = document.querySelectorAll('option');
+            var instances = M.FormSelect.init(elems, options);
+        });
+    </script>
+{% endblock %}
+
+{% endblock %}
